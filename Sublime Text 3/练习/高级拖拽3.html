@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>带框的拖拽</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: pink; position: absolute;}
+		.box{position: absolute; border: 1px dashed black;}
+	</style>
+
+	<script>
+		window.onload =function(){
+			drag('div1')
+		}
+
+		function  drag( id ) {
+
+			var oDiv = document.getElementById(id);
+
+			oDiv.onmousedown = function(ev){
+				var oEvent = ev || event;
+
+				//鼠标按下时创建一个新的div
+				var oNewDiv = document.createElement('div');
+				oNewDiv.className = 'box';
+				oNewDiv.style.width = oDiv.offsetWidth-2 + 'px';
+				oNewDiv.style.height = oDiv.offsetHeight-2 + 'px';
+				oNewDiv.style.left = oDiv.offsetLeft + 'px';
+				oNewDiv.style.top = oDiv.offsetTop+ 'px';
+
+				document.body.appendChild(oNewDiv);
+
+
+				var disX = oEvent.clientX - oDiv.offsetLeft;
+				var disY = oEvent.clientY - oDiv.offsetTop;
+
+				document.onmousemove = function(ev){
+					var oEvent = ev || event;
+
+					var l = oEvent.clientX - disX;
+					var t = oEvent.clientY - disY;
+					
+					//限制范围——不出可视区
+					if( l < 50 ){  //磁性吸附
+						l = 0;
+					}else if( l > document.documentElement.clientWidth - oDiv.offsetWidth - 50){
+						l = document.documentElement.clientWidth - oDiv.offsetWidth;
+					}
+					if( t < 50 ){
+						t = 0;
+					}else if( t > document.documentElement.clientHeight - oDiv.offsetHeight - 50){
+						t = document.documentElement.clientHeight - oDiv.offsetHeight;
+					}
+
+					oNewDiv.style.left = l +'px';
+					oNewDiv.style.top = t + 'px';
+				}
+
+				document.onmouseup = function(){
+					document.onmouseup = null;
+					document.onmousemove = null;
+
+					oDiv.style.left = oNewDiv.style.left;
+					oDiv.style.top = oNewDiv.style.top;
+					document.body.removeChild(oNewDiv);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

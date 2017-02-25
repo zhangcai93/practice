@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* *{margin:0; padding: 0;} */
+	#div1{width: 100px; height: 100px; background: green;}
+	#div2{width: 100px; height: 100px; background: green; margin-top: 10px;}
+	
+	</style>
+
+<script src='jquery-3.1.1.js'></script>
+	<script>
+		$(function(){
+			$('#div1').click(function(){
+				/*$(this).animate({width:300, height:300}, 3000, 'swing');
+				$('#div2').animate({width:300, height:300}, 3000, 'linear');*/
+
+
+//链式运动两种方式
+				/*$(this).animate({width:300}, 1000, 'swing', function(){
+					$(this).animate({height:300}, 1000)
+				})*/
+
+				$(this).animate({width:300}, 1000).animate({height:300}, 4000)
+				
+			})
+
+			$('#div2').click(function(){
+				//alert(123)
+				$('#div1').stop(true, true);
+				//alert(123)
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+</html>

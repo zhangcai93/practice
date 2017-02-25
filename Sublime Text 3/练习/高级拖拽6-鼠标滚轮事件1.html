@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚轮控制高变化</title>
+	<style>
+		#div1{width: 200px; height: 200px; background: red;}
+	</style>
+
+
+	<script>
+		window.onload = function(){
+			var oDiv = document.getElementById('div1');
+
+			function onMouseWheel(ev){
+				var oEvent = ev || event;
+
+				var bDown = true;
+				bDown = oEvent.wheelDelta? oEvent.wheelDelta < 0: oEvent.detail > 0;
+				//alert(bDown);
+
+				/*if(oEvent.wheelDelta){
+					if (oEvent.wheelDelta < 0 ) {
+						bDown = true;
+					}else{
+						bDown = false;
+					}
+				}else{
+					if(oEvent.detail > 0 ){
+						bDown = true;
+					}else{
+						bDown = false;
+					}
+				}*/
+				
+				if (bDown) {
+					oDiv.style.height = oDiv.offsetHeight + 10 +'px';
+				}else{
+					oDiv.style.height = oDiv.offsetHeight - 10 +'px';
+				}
+
+				if (oEvent.preventDefault) {
+					oEvent.preventDefault();
+				}
+
+				return false;
+			}
+
+			myAddEvent(oDiv, 'mousewheel', onMouseWheel);
+			myAddEvent(oDiv, 'DOMMouseScroll', onMouseWheel);
+
+
+		}
+
+		function myAddEvent(obj, sEvent, fn){
+			if (obj.attachEvent) {
+				obj.attachEvent('on'+sEvent, fn);
+			}else{
+				obj.addEventListener(sEvent, fn, false);
+			}
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+	<div id="div1"></div>
+</body>
+</html>

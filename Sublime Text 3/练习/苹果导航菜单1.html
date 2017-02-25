@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>苹果导航菜单</title>
+	<style>
+		body{margin: 0; padding: 0;}
+		#div1{width: 100%; position: absolute; bottom: 0; text-align: center;}
+	</style>
+
+	<script>
+		window.onload = function(){
+
+		}
+		//1.确定下来每个图标的位置x,y
+		document.onmousemove = function(ev){
+			var oEvent = ev || event;
+			var aImg = document.getElementsByTagName('img');
+			var aTxt = document.getElementsByTagName('input');
+			var oDiv = document.getElementById('div1');
+
+			for(var i=0; i<aImg.length; i++){
+				var x = aImg[i].offsetLeft + aImg[i].offsetWidth/2 ;
+				var y = aImg[i].offsetTop + oDiv.offsetTop + aImg[i].offsetHeight/2 ;
+
+				aTxt[i].value = 'x: '+ x +', y: '+ y;
+			}
+
+		}
+	</script>
+</head>
+<body>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<div id="div1">
+	<img src="appleimg/1.png" width="64" alt="">
+	<img src="appleimg/2.png" width="64" alt="">
+	<img src="appleimg/3.png" width="64" alt="">
+	<img src="appleimg/4.png" width="64" alt="">
+	<img src="appleimg/5.png" width="64" alt="">
+</div>
+	
+</body>
+</html>

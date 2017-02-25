@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: green; position: absolute;}
+		div{height: 3px;width: 3px; background: black; position: absolute;}
+	</style>
+	<script src= 'js/impactmove.js'></script>
+	<script>
+	window.onload = function(){
+		var oDiv = document.getElementById('div1');
+
+		var lastX = 0;  //初始情况的前一个点
+		var lastY = 0;
+
+		oDiv.onmousedown = function(ev){
+			var oEvent = ev || event;
+
+			var disX = oEvent.clientX - oDiv.offsetLeft;
+			var disY = oEvent.clientY - oDiv.offsetTop;
+
+			document.onmousemove = function( ev){
+				var oEvent = ev || event;
+
+				var l = oEvent.clientX - disX;
+				var t = oEvent.clientY - disY;
+
+				oDiv.style.left = l + 'px';
+				oDiv.style.top = t +'px';
+
+				iSpeedX = l - lastX;
+				iSpeedY = t - lastY;
+
+				lastX = l;
+				lastY = t;
+
+				//console.log('x:' + iSpeedX + ',y:' + iSpeedY);
+
+//可以看到拖拽div的轨迹，一个一个点组成的。
+				/*var oBox = document.createElement('div');
+				oBox.style.left = l + 'px';
+				oBox.style.top = t + 'px';
+				document.body.appendChild(oBox);*/
+			}
+
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+
+				startMove(oDiv);
+			}
+
+			clearInterval(timer);
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<input type="button" value="开始运动" onclick="startMove()">
+	<div id="div1"></div>
+</body>
+</html>

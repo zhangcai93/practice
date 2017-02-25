@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义滚动条_控制文字移动</title>
+	<style>
+		#parent{width:400px;height: 20px;background: #ccc; position: relative; margin: 20px auto;}
+		#div1{width: 20px; height: 20px; background: pink; cursor: pointer; position: absolute; }
+		#div2{width: 200px; height:300px; border: 1px solid black; position: relative; overflow: hidden;}
+		#div3{position: absolute;}
+	</style>
+	<script>
+		function myAddEvent(obj, sEvent, fn){
+			if (obj.attachEvent) {
+				obj.attachEvent('on'+sEvent, fn);
+			}else{
+				obj.addEventListener(sEvent, fn, false);
+			}
+		}
+
+		window.onload = function(){
+
+			var oDiv = document.getElementById('div1');
+			var oParent = document.getElementById('parent');
+			var oDiv2 = document.getElementById('div2');
+			var oDiv3 = document.getElementById('div3');
+
+			function onMouseWheel(ev){
+				var oEvent = ev || event;
+
+				var bDown = true;
+				bDown = oEvent.wheelDelta? oEvent.wheelDelta < 0: oEvent.detail > 0;
+				if (bDown) {
+					setLeft(oDiv.offsetLeft + 10);
+					
+				}else{
+					setLeft(oDiv.offsetLeft - 10);
+				}
+
+				if (oEvent.preventDefault) {
+					oEvent.preventDefault();
+				}
+
+				return false;
+			}
+
+			myAddEvent(oParent, 'mousewheel', onMouseWheel);
+			myAddEvent(oParent, 'DOMMouseScroll', onMouseWheel);
+			myAddEvent(oDiv2, 'mousewheel', onMouseWheel);
+			myAddEvent(oDiv2, 'DOMMouseScroll', onMouseWheel);
+
+			oDiv.onmousedown = function(ev){
+				var oEvent = ev || event;
+
+				var disX = oEvent.clientX - oDiv.offsetLeft;
+				
+				document.onmousemove = function(ev){
+					var oEvent = ev || event;
+					var l = oEvent.clientX - disX ;
+
+					setLeft(l);
+				}
+
+				document.onmouseup = function(){
+					document.onmouseup = null;
+					document.onmousemove = null;
+				}
+
+			}
+
+			function setLeft(l){
+				if(l < 0){
+					l = 0;
+				}else if( l > oParent.offsetWidth - oDiv.offsetWidth){
+					l = oParent.offsetWidth - oDiv.offsetWidth;
+				}
+				
+				oDiv.style.left = l +'px';
+
+				var scale = l/(oParent.offsetWidth - oDiv.offsetWidth) ;
+
+				oDiv3.style.top = -(oDiv3.offsetHeight - oDiv2.offsetHeight)*scale + 'px';
+				
+				document.title = scale ;
+			}
+
+		}
+		
+	</script>
+	
+</head>
+<body>
+	<div id="parent">
+		<div id="div1"></div>
+	</div>
+	<div id="div2">
+		<div id="div3">
+			1、提拉米苏（Tiramisu）著名的意大利甜点。
+2、沙河蛋糕（Sachertorte）奥地利著名甜点，以巧克力涂抹的内裹杏仁及果酱的巧克力奶油蛋糕。现在，沙河蛋糕已经成为了奥地利的国宝级点心。 
+3、维也纳巧克力杏仁蛋糕（Imperial Torte）以奥地利首都命名的蛋糕，名字起源于奥地利最好的宾馆之名。当年宾馆开幕时，一位糕饼师傅烘焙出了一种口感特殊、有着用可口的牛奶巧克力和甜美杏仁制成的外层，以及铺满碎杏仁和可可亚的内层的蛋糕，而此整个蛋糕吃起来口感既甜美又细腻。。它不仅受到了皇帝的喜爱，还被皇帝亲自赐名为“Imperial Torte”（甜密的问候）。
+4、 欧培拉（Opera） 法国知名甜点，是款有着数百年历史的蛋糕，里边那股浓郁的巧克力味与咖啡味令每个爱好巧克力与咖啡的人都迷恋不已。传统的欧培拉共有六层，包括三层浸过咖啡糖浆的海绵蛋糕，以及用牛油、鲜奶油和巧克力奶油做成的馅。整个蛋糕充满了咖啡与巧克力的香味，入口即化。
+4、慕斯蛋糕（Mousse Cake）法国的另一款著名甜食，是厨师们最初在奶油中加入各种口感和风味的辅料后诞生的产物。由于慕斯蛋糕无论是外型、色泽、结构还是口味均变化丰富，且口感自然纯正，再加上将其冷冻后食用便会愈加其味无穷的特点，因此它立刻成为了蛋糕中的极品存在。
+5、木材蛋糕（Yule log）法国节日必备点心，其名字中的“Yule”其实是圣诞节的旧称，因为从维京时代至今的冬季庆典，英格兰的人们在圣诞节时都会在林子里砍下树木拖回去放置在壁炉内，从平安夜开始烧上12天，所以这种树木就被叫做“Yule log”(圣诞树)。
+6、奶酪蛋糕 (Cheese Cake)有名芝士蛋糕，顾名思义就是加有奶酪的蛋糕。而蛋糕中所使用的奶酪则起源自阿拉伯。蛋奶酥（Souffle） 于中世纪诞生的法国著名甜点。它有着云朵般蓬松的外型，却能让人在吃完之后感觉到似乎什么都没吃。   
+7、槭风蛋糕（Chiffon Cake）美国的名产之一。槭风蛋糕的前身是海绵蛋糕（Sponge），它是种完全靠打发蛋（全蛋或是分蛋）来形成蛋糕组织孔隙的糕点，因此典型的海绵蛋糕材料只有蛋、面粉和糖这三样。由于口感和组织特别柔软绵滑，所以这种蛋糕就被命名为槭风蛋糕（名字里的“Chiffon”是“乔其纱”的意思，这是一种类似丝绸却不像丝绸般难保养的布料）。槭风蛋糕其实就是改良后的海绵蛋糕。里面除了蛋、面粉和糖之外，还放了植物油和水（作用是增加组织湿度，使口感更蓬松湿润）。但是因为面糊比较湿、不容易膨胀的缘故，所以需要靠手工来帮助面糊发泡膨胀。此外，槭风蛋糕的面糊因为比较湿，所以烘烤时必需保证面糊可以攀着烤模壁往上爬升才行，否则烤出来的蛋糕会扁扁的，组织也会硬而没有孔隙。
+8、长崎蜂蜜蛋糕（Nagaski Castella） 日本著名西点。蜂蜜蛋糕最早起源于荷兰古国，当时的贵族在招待使节时都会用它来向宾客表达主人最隆重的敬意。
+9、圣诞面包（Stollen）德国著名甜点，至今己有五百年历史。由于浸过大量黄油，因此圣诞面包的口感与蛋糕十分接近。
+10、波士顿派（Boston Cream Pie）美国著名甜点。事实上它并不是派, 而是海绵蛋糕（松糕）
+		</div>
+	</div>
+</body>
+</html>

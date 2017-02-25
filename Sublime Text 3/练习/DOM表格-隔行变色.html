@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script>
+		window.onload = function(){
+			var oTab = document.getElementById('tab1');
+			
+			for(var i=0; i<oTab.tBodies[0].rows.length; i++){
+				oTab.tBodies[0].rows[i].style.background = i%2 ?'#ccc':'';
+
+				//oTab.tBodies[0].rows[i].index = i;
+				var oldBgColor = '';  
+				oTab.tBodies[0].rows[i].onmouseover = function(){
+					oldBgColor = this.style.background;
+					//移入前将颜色存起来
+					this.style.background = 'yellow';
+				}
+				oTab.tBodies[0].rows[i].onmouseout = function(){
+					//this.style.background = this.index%2? '#ccc':'';
+					this.style.background = oldBgColor;
+				}
+
+			}
+		}
+	</script>
+
+</head>
+<body>
+<table id="tab1" border="1" width="400">
+	<thead>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>操作</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>BLUE</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>LEO</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>ZHANG</td>
+			<td></td>
+		</tr>
+	</tbody>
+	<tfoot></tfoot>
+</table>
+	
+</body>
+</html>

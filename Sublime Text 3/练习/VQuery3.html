@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+	#div1{width: 100px; height: 200px; background: pink;}
+</style>
+	<meta charset="UTF-8">
+	<title>hover移入移出</title>
+	<script src='js/VQuery.js'></script>
+
+	<script>
+	/*$('#div1').hover(function(){
+		移入时做的事情
+	}, function(){
+		移出时做的事情
+	})*/
+
+	/*css()方法：一个参数：返回样式；两个参数：设置样式*/
+
+		$(function(){
+			$('#div1').hover(function(){
+				$(this).css('background', 'green')
+				//alert('a')
+			}, function(){
+				/*document.title = 'out';*/
+				//alert('b')
+				$(this).css('background', 'gray')
+			})
+
+			$('#div1').click(function(){
+				alert($('#div1').css('width'));
+			})
+		})
+	</script>
+
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

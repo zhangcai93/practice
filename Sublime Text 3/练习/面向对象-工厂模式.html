@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+
+function createPerson(name , sex){
+	//1.原料
+	var obj = new Object();
+
+	//2. 加工
+	obj.name = name;
+	obj.sex = sex;
+
+	obj.showName = function(){
+		alert('my name' + this.name);
+	}
+	obj.showSex = function(){
+		alert('my sex' + this.sex);
+	}
+
+	//3.出厂
+	return obj;
+}
+	var p1 = createPerson('zhang' , 'male');
+	var p2 = createPerson('leo' , 'female')
+
+	p1.showName();
+	p1.showSex();
+
+	p2.showName();
+	p2.showSex();
+</script>
+<body>
+	
+</body>
+</html>

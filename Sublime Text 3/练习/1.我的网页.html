@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script type="text/javascript">
+        var curr = 5;
+
+function changePic(){
+    document.getElementById("mypic").src = "img/pic-" + curr + ".jpg";
+    }
+
+window.onload = function(){
+    document.getElementById("prebt").addEventListener("click",function(){ 
+    curr--;
+    },false);
+    document.getElementById("nextbt").addEventListener("click",function(){
+        curr++;
+        } ,false);
+        
+    changePic();    
+    }
+
+    </script>>
+</head>
+<body>
+    <div id="showPic">
+        <img id="mypic" src="img/pic-1.jpg"  width="300px" />
+    </div>
+    <div id="ctrlPic">
+        <button id="prebt">上一张</button>
+        <button id="nextbt">下一张</button>
+    </div>
+</body>
+</html>

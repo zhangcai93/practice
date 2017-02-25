@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animate插件</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: pink; filter: alpha(opacity:30);opacity: 0.3;}
+	</style>
+	<script src='js/VQuery.js'></script>
+	<script src='js/VQuery_animate.js'></script>
+	<script>
+		$(function(){
+			$('input').toggle(function(){
+				$('#div1').animate({width:200, height:200, opacity:100});
+			},function(){
+				$('#div1').animate({width:100, height:100, opacity:30});
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="运动">
+	<div id="div1"></div>
+</body>
+</html>

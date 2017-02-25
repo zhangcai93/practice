@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+</head>
+<body>
+	<canvas id="canvas" width="1000" height="1000" style="background: gray;">
+		浏览器不支持canvas标签
+	</canvas>
+	<script>
+		//获取画布DOM,还不可以操作（没有绘图环境）
+		var oCanvas = document.getElementById('canvas');
+		//alert(oCanvas)
+		//设置绘图环境
+		var cxt = oCanvas.getContext('2d');
+		//alert(cxt)
+		
+
+		
+			//设定画笔的宽度
+			cxt.lineWidth = 10;
+			//设置画笔的颜色
+			cxt.strokeStyle = '#0f0';
+		//画一条线段
+		cxt.moveTo(20,20); //设定笔触的位置-起始位置
+		cxt.lineTo(100,20);  //设置移动的方式-画线到结束位置
+		cxt.stroke();  //画线
+		cxt.closePath();// 封闭路径
+
+
+			//设定画笔的宽度
+			cxt.lineWidth = 3;
+			//设置画笔的颜色
+			cxt.strokeStyle = 'pink';
+		//画空心圆形-用路径函数:arc(圆心的坐标2个参数,半径，45参数角度范围，顺逆时针画)
+		cxt.beginPath();
+		cxt.arc(200,200,50,0,360,false);
+		cxt.stroke(); 
+		cxt.closePath();
+
+			//设置填充颜色
+			cxt.fillStyle = 'rgb(230,200, 100)';
+		//画实心圆形
+		cxt.beginPath();
+		cxt.arc(200,100,50,0,360,false);
+		cxt.fill();
+		cxt.stroke(); //实心圆外面套一个空心圆
+		cxt.closePath();
+
+
+		//画一个矩形-不是路径图形,不需要开始结束路径
+		cxt.rect(300,20, 100,100);
+		cxt.stroke();
+			//空心矩形其他画法-建议使用
+		cxt.strokeRect(300,150, 100,100);  //空心的
+		//实心矩形-有填充的地方要新开启路径，否则会把前面的都填充了
+		cxt.beginPath();
+		cxt.rect(300,270, 100,100);  
+		cxt.fill();
+			//实心矩形其他画法-建议使用
+		cxt.fillRect(300,390, 100,100);
+
+
+		//设置文字在画布中
+		cxt.font = '40px 黑体';  //css中的font属性，有顺序的限制
+		cxt.fillText('canvas', 20, 300); //实心字。2,3参数指定位置
+		cxt.lineWidth = 1; //将笔触宽度设置的小一点，看空心字的效果
+		cxt.strokeText('canvas', 20, 350); //空心字
+
+
+		//画一个三角形
+		cxt.beginPath();
+		cxt.moveTo(300, 500);
+		cxt.lineTo(300, 600);
+		cxt.lineTo(400, 550);
+		cxt.closePath();  //填充或画路径需要先closePath在画或填充
+		cxt.stroke();
+		//实心三角形
+		cxt.beginPath();
+		cxt.moveTo(300, 600);
+		cxt.lineTo(300, 700);
+		cxt.lineTo(400, 650);
+		cxt.closePath();
+		cxt.fill();
+
+
+
+		//画图 把一幅图片画到画布中
+		var img = new Image();
+		img.src = 'cat.jpg';
+		cxt.drawImage(img, 20,370, 152,123);  //第一个参数是对象，23参数是位置，45参数是图片的大小. drawImage方法，webkit内核不支持-chrome不支持
+
+
+		
+		//旋转线段
+		//设置旋转环境
+		cxt.save();  //保存当前已经做好的环境
+		//图片/形状 旋转
+			//重置0,0点的位置
+			cxt.translate(20,20);  //旋转时会以它为旋转点（默认是canvas的0，0点）
+
+			//先设置旋转角度再画图,参数是弧度，角度0-360-对应弧度：角度*Math.PI/180, 
+			cxt.rotate(-30*Math.PI/180);
+			//旋转一个线段
+			cxt.lineWidth = 10;
+			cxt.beginPath();
+			cxt.moveTo(0,0); //改变了0点，此处重置为0；
+			cxt.lineTo(20,100);
+			cxt.stroke();
+			cxt.closePath();
+		//将旋转之后的元素放回原画布
+		cxt.restore();
+		//过程不可以颠倒，1.设置0,0点位置；2.旋转角度；3.画图
+
+		//旋转图片
+		cxt.save();
+		cxt.translate(20,370);
+		cxt.rotate(20*Math.PI/180);
+		var img = new Image();
+		img.src = 'cat.jpg';
+		cxt.drawImage(img, 0,0, 152,123);
+		cxt.restore();
+
+	</script>
+</body>
+</html>

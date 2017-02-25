@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: green; position: absolute; top: 50px; left: 0px;}
+	</style>
+	<script>
+
+		var iSpeed = 0;
+		var left = 0;
+		
+		function startMove(obj, iTarget){
+			clearInterval(obj.timer);
+
+			obj.timer = setInterval(function(){
+
+				iSpeed += (iTarget - left)/5;
+				iSpeed *= 0.7; 
+
+				left += iSpeed;
+
+				if( Math.abs(iSpeed)<1 && Math.abs(left - iTarget)<1 ){
+					clearInterval(obj.timer);
+					obj.style.left = iTarget + 'px';
+				}else{
+					obj.style.left = left+ 'px';
+				}
+	
+			}, 30)
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始运动" onclick="startMove()">
+	<div id="div1"></div>
+	<div style="position: absolute; width: 1px; height: 300px; left: 300px; top: 0;background: black;"></div>
+</body>
+</html>

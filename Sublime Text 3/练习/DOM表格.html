@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script>
+		window.onload = function(){
+			var oTab = document.getElementById('tab1');
+			
+			//alert(oTab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML)
+			alert(oTab.tBodies[0].rows[1].cells[1].innerHTML)
+		}
+	</script>
+
+</head>
+<body>
+<table id="tab1" border="1" width="400">
+	<thead>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>操作</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>BLUE</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>LEO</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>ZHANG</td>
+			<td></td>
+		</tr>
+	</tbody>
+	<tfoot></tfoot>
+</table>
+	
+</body>
+</html>

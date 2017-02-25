@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0; padding: 0;}
+	#login{width: 300px; height: 300px; border: 1px solid #000;position: absolute;}
+	#close{position: absolute; right: 0;top: 0;}
+	</style>
+
+<script src='jquery-3.1.1.js'></script>
+	<script>
+		$(function(){
+			$('#input1').click(function(){
+				//动态创建弹窗元素
+				var oLogin = $('<div id="login"><p>用户名：<input type="text"></p><p>密码： <input type="text"></p><div id="close">×</div></div>');
+
+				$('body').append(oLogin);
+
+				//让弹窗居中
+
+				oLogin.css('left', ($(window).width() - oLogin.outerWidth())/2 );
+				oLogin.css('top', ($(window).height() - oLogin.outerHeight())/2 );
+
+				//若是有滚动条滚动或窗口改变大小
+				$(window).on('resize scroll', function(){
+					oLogin.css('left', ($(window).width() - oLogin.outerWidth())/2 );
+					oLogin.css('top', ($(window).height() - oLogin.outerHeight())/2 + $(window).scrollTop() );
+				})
+
+				//点击×，关闭弹窗。弹窗动态创建的，删除动态创建的元素
+				$('#close').click(function(){
+					oLogin.remove();
+				})
+				
+
+
+			})
+
+		})
+	</script>
+</head>
+<body style="height: 2000px;">
+	<input type="button" value="点击" id="input1">
+	<!-- <div id="login">
+		<p>用户名：<input type="text"></p>
+		<p>密码： <input type="text"></p>
+		<div id="close">×</div>
+	</div> -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VQuery</title>
+	<script src='js/VQuery.js'></script>
+
+	<script>
+		/*new VQuery(function () {
+			alert('a');
+		});
+		new VQuery(function () {
+			alert('b');
+		});*/
+
+		new VQuery(function(){
+			/*console.log(new VQuery('#btn1'))
+			console.log(new VQuery('.btn'))
+			console.log(new VQuery('input'))*/
+			$('input').click(function(){
+				alert('a');
+				
+			})
+		})
+	</script>
+
+</head>
+<body>
+	<input type="button" id="btn1" class="btn" value="aa">
+</body>
+</html>

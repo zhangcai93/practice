@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css()链式操作</title>
+	<style>
+		#div1{height: 100px; width: 100px; background: pink;}
+	</style>
+	<script src='js/VQuery.js'></script>
+	
+	<script>
+		$(function(){
+			//$('#div1').css({width: '200px'})
+			/*console.log($('input').hover(function(){
+				document.title = 'over';
+			}, function(){
+				document.title = 'out';
+			}))*/
+
+			$('input').hover(function(){
+				document.title = 'over';
+			}, function(){
+				document.title = 'out';
+			}).css({width: '100px', height: '200px'}).click(function(){
+				alert('a');
+			})
+		
+		})
+
+	</script>
+</head>
+<body>
+	<input type="button" value="变">
+	
+</body>
+</html>

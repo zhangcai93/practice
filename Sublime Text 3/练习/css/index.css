@@ -1,0 +1,13 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select{margin: 0;padding: 0;}
+em{font-style: normal;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: none;vertical-align: top;}
+table{border-collapse: collapse;}
+textarea{resize: none;overflow: auto;}
+
+#nav{width: 1208px; height: 64px;padding-left: 12px;padding-right: 20px; background: #373942;}
+#nav .container{width: 1176px;height: 64px; padding: 0 15px; position: relative;}
+#nav .logo_container{width: 164px; height: 64px; float: left;}
+#nav .nav_container{width: 638px; height: 64px; margin-left: 40px; float: left;}
+#nav .pull_right{width: 177px;height: 64px;position: absolute; right: 0;left: 0;}

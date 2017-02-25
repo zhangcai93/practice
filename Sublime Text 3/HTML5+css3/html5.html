@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+	<style>
+		/* *{border: 1px solid black;height: 200px;} */
+		/* 
+		所有的HTML5的结构标签本质上是个div标签，只不过有意义
+		 */
+		 header{height: 150px;background: pink;width: 100%;}
+		 nav{height: 50px; background: red; position: relative; top: 100px;}
+		 nav ul{}
+		 nav ul>li{float: left; width: 100px; height: 50px; line-height: 50px;text-align: center;list-style: none;}
+		 div{margin-top: 10px; height: 1000px;}
+		 section{float:left;  height: 1000px; background: #acbdef; width: 60%;}
+		 article{background: gray;width: 500px; margin: 0 auto;text-align: center;}
+		 aside{height: 1000px; background: green; width: 38%; float: right;}
+		 footer{height: 100px; background: gray; width: 100%;clear: both; margin-top: 10px;}
+		 small{float: left; margin-right: 10px;}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</nav>
+	</header>
+	<div>
+		<section>
+			<article>
+				<h2>春晓</h2>
+				<p>
+					春眠不觉晓，<br>
+					春眠不觉晓，<br>
+					春眠不觉晓，<br>
+					春眠不觉晓，<br>
+				</p>
+			</article>
+			<hr/>
+
+			<article>
+				<h2>春晓</h2>
+				<p>
+					春眠不觉晓，<br>
+					春眠不觉晓，<br>
+					春眠不觉晓，<br>
+					春眠不觉晓，<br>
+				</p>
+			</article>
+			<hr>
+
+			<figure>
+				<figcaption>UFO</figcaption>
+				<p>UFO不明飞行物 unknown flying object</p>
+			</figure>
+			<figure>
+				<dt>OCean</dt>
+				<dd>海洋、、、、、、</dd>
+			</figure>
+			<hr>
+
+			<menu>
+				<li>点击</li>
+				<li>右击</li>
+			</menu>
+			<hr>
+			<span contextmenu='caidan'>右键（ 火狐浏览器支持）</span> 
+			<menu type='context' id="caidan">
+				<menuitem label='菜单1' onclick="alert('菜单1')" icon=''> </menuitem>
+			</menu>
+			<hr>
+
+			<meter min="0" max="10" value="8" low="3" high="7">状态条低于low高于high有提示状态</meter>
+			<progress max="100" value="0" id="pro">进度条</progress>
+			<script>
+				var pro = document.getElementById('pro');
+				setInterval(function(){
+					pro.value +=10 ;
+				},1000)
+			</script>
+			<hr>
+
+			<details>
+				<dt>这是一个问题</dt>
+				<dd>问题描述。。。。。</dd>
+				<dt>这是一个问题</dt>
+				<dd>问题描述。。。。。</dd>
+				<dt>这是一个问题</dt>
+				<dd>问题描述。。。。。</dd>
+			</details>
+			<hr>
+
+			<ruby>犮<rp>(</rp><rt>quan</rt><rp>)</rp></ruby>
+			<p>rt标签添加注释，不支持rt标签的用(),rp标签在支持rt标签注释的情况下注释掉()</p>
+			<hr>
+
+			rawerwtawt<mark>mark标签标注 黄色选中状态显示</mark>
+			qwerttetiptuipwtutuwititutufsadnfskl
+
+		</section>
+		<aside>
+			<p>这是一个aside标签</p>
+			<hgroup>
+				<h3>qwer</h3>
+				<h3>asdf</h3>
+				<h3>zxcv</h3>
+			</hgroup>
+		</aside>
+	</div>
+	<footer>
+		<small>法律条文</small>
+		<small>联系我们</small>
+	</footer>
+</body>
+</html>

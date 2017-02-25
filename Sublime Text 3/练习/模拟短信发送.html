@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#content{width: 300px; height: 500px; border: 1px solid gray;margin: auto;position: relative; }
+		#btn1, #text,#btn2{position: absolute; bottom: 10px; margin-left: 30px;}
+		#btn1{width:58px;}
+		#k{width: 250px;height: 400px;border: solid gray 1px;position: absolute;top: 20px;left: 24px;}
+		#text{margin-left: 100px; width: 120px;}
+		#btn2{margin-left: 230px;}
+		.pic01{width:240px;background:url(img/pic-6.jpg) no-repeat left top;float:left;margin-top:10px;margin-left:10px;text-align: right;}
+		/*注意：不设置div的高度，这样div的高度会随着内容变化，由内容撑起高度*/
+		
+		.pic02{width:240px;background:url(img/pic-7.jpg) no-repeat right top;float:right;margin-top:10px;margin-right:10px;text-align: left;}
+		
+
+	</style>
+
+	<script type="text/javascript">
+		window.onload=function(){
+		var btn1=document.getElementById('btn1');
+		var text1=document.getElementById('text');
+		var btn2=document.getElementById('btn2');
+		var k=document.getElementById('k');
+		var off=true;
+		var arr=['img/pic-6.jpg','img/pic-7.jpg']
+		btn1.src=arr[0];
+		btn1.onclick=function () {
+			if (off) {
+				btn1.src=arr[1];
+				off=false;
+			}else{
+				btn1.src=arr[0];
+				off=true;
+			}
+		}
+		btn2.onclick=function(){
+			if(off){
+				k.innerHTML += '<div class="pic02">' +text1.value + '</div>' + '<br/>';
+			}else{
+				k.innerHTML += '<div class="pic01">' +text1.value + '</div>'+ '<br/>';
+			}
+			text1.value='';
+		
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="content">
+		<div id="k"></div>
+		<img id='btn1'>
+		<input id='text' type="text"/>
+		<button id="btn2">发送</button>
+	</div>
+</body>
+</html>

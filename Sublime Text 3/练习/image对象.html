@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>image对象</title>
+	<script>
+		window.onload = function(){
+			var oImg = new Image();
+			
+			oImg.onload = function(){
+				alert('图片预加载完成')
+			}
+			oImg.onerror  = function(){
+				alert('失败')
+			}
+
+			oImg.src = 'http://himg2.huanqiu.com/attachment2010/2014/0310/20140310023639976.jpg';
+		}
+	</script>
+</head>
+<body>
+	<img width="100" height="100" src="http://himg2.huanqiu.com/attachment2010/2014/0310/20140310023629907.jpg" onmouseover="this.src='http://himg2.huanqiu.com/attachment2010/2014/0310/20140310023639976.jpg';" onmouseout="this.src='http://himg2.huanqiu.com/attachment2010/2014/0310/20140310023629907.jpg';" alt="">
+</body>
+</html>

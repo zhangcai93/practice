@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* *{margin:0; padding: 0;} */
+	#div1{width: 100px; height: 100px; background: green; position: absolute;}
+	
+	</style>
+
+<script src='jquery-3.1.1.js'></script>
+	<script>
+		$(function(){
+
+			$('#div1').drag();
+
+
+
+		})
+
+//插件形式扩展-拖拽方法,extend中内容为json形式的
+	$.fn.extend({
+		drag: function(){
+			//此处this指的是：$('#div1') 即调用这个方法的元素
+
+			var _this = this;  //将this对象存起来，以便后面使用
+
+			this.mousedown(function(ev){
+				var disX = ev.pageX - $(this).offset().left;
+				var disY = ev.pageY - $(this).offset().top;
+ 			
+ 				$(document).mousemove(function(ev){
+ 					_this.css('left', ev.pageX - disX );
+ 					_this.css('top', ev.pageY - disY );
+ 				})
+ 
+ 				$(document).mouseup(function(){
+ 					$(document).off();
+ 				})
+
+ 				return false;
+			})
+		}
+	})
+
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

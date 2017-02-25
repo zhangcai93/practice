@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+
+function createPerson(name , sex){
+
+//假想的系统内部工作流程
+// var this = new Object();
+	this.name = name;
+	this.sex = sex;
+
+	this.showName = function(){
+		alert('my name' + this.name);
+	}
+	this.showSex = function(){
+		alert('my sex' + this.sex);
+	}
+//假想的系统内部工作流程
+// return this;s	
+
+}
+	var p1 = new createPerson('zhang' , 'male');
+	var p2 = new createPerson('leo' , 'female')
+
+	p1.showName();
+	p1.showSex();
+
+	p2.showName();
+	p2.showSex();
+</script>
+<body>
+	
+</body>
+</html> 

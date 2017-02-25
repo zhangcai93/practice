@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nav</title>
+</head>
+<style>
+	body,h1,ul{margin: 0;padding: 0; font-family:"Archivo Narrow"; font-style: normal; font-weight: 400;}
+	li{list-style: none; padding: 0; padding: 0;}
+	a{text-decoration: none;color:#333;}
+	a:hover{color: gray;}
+	img{border: none; vertical-align: top;}
+	.clear{zoom:1;}
+	.clear:after{content: "";display: block; clear: both;}
+
+	.header{width: 1080px; margin: 30px auto;}
+	.left{ float: left;}
+	.right{float: left;}
+	#home{margin-right: 200px;}
+	.menu_main{float: left; width: 200px; padding-top: 11px;}
+
+	.sub_menu{display: none; padding-top: 10px;}
+	.sub_menu li{line-height: 30px;}
+	
+</style>
+
+<script>
+function getByClass(oParent, sClass){
+	var aEle = document.getElementsByTagName("*");
+	var aResult =[];
+	
+	for(var i=0; i< aEle.length; i++){
+		if(aEle[i].className == sClass){
+			aResult.push(aEle[i]);
+		}
+	}
+	return aResult;	
+}
+
+window.onload = function(){
+	var oUl = document.getElementById('ullist');
+	var osubMenu = getByClass(oUl , "sub_menu");
+	var omainMenu =getByClass(oUl , "menu_main");
+
+	for(var i=0; i<omainMenu.length; i++){
+		omainMenu[i].index = i;
+		omainMenu[i].onmouseover = function(){
+			//alert("a");
+			osubMenu[this.index].style.display = "block";
+		}
+		omainMenu[i].onmouseout = function(){
+			//alert('b');
+			osubMenu[this.index].style.display = "none";
+		}
+	}
+}
+
+
+</script>
+<body>
+
+<header class="header">	
+	<div class="left">
+		<h1 id="home"><a href="#">HOME</a></h1>
+	</div>
+	<div class="right" id="ullist">
+	<ul class="menuList clear">
+		<li class="menu_main">
+			<a href="#">Exhibition</a>
+			<ul class="sub_menu">
+				<li><a href="#">Dance</a></li>
+				<li><a href="#">Music</a></li>
+				<li><a href="#">......</a></li>
+			</ul>
+		</li>
+
+		<li class="menu_main">
+			<a href="#">SoundTrack</a>
+			<ul class="sub_menu">
+				<li><a href="#">秋千</a></li>
+				<li><a href="#">跷跷板</a></li>
+				<li><a href="#">行为舞蹈</a></li>
+			</ul>
+		</li>
+
+		<li class="menu_main">
+			<a href="#">Contact</a>
+			<ul class="sub_menu">
+				<li><a href="#">Name</a></li>
+				<li><a href="#">Email</a></li>
+				<li><a href="#">Subject</a></li>
+                <li><a href="#">Message</a></li>
+			</ul>
+		</li>
+
+		<li class="menu_main"><a href="about.html">About</a></li>
+	</ul> 
+	</div>
+	
+</header>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: green; position: absolute; top: 50px; left: 0px;}
+	</style>
+	<script>
+
+		var iSpeed = 0;
+		var 
+
+		function startMove(){
+			var oDiv = document.getElementById('div1');
+			setInterval(function(){
+
+				//iSpeed ++;  //加速运动，在初始的速度的基础上不断加
+				if(oDiv.offsetLeft < 300){
+					iSpeed += ;
+				}else if(oDiv.offsetLeft >= 300){
+					iSpeed -= ;
+				}
+				oDiv.style.left = oDiv.offsetLeft + iSpeed + 'px';
+			}, 30)
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始运动" onclick="startMove()">
+	<div id="div1"></div>
+	<div style="position: absolute; width: 1px; height: 300px; left: 300px; top: 0;background: black;"></div>
+</body>
+</html>

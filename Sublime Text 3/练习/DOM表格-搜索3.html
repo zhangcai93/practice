@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script>
+		window.onload = function(){
+			var oTab = document.getElementById('tab1');
+			var oTxt = document.getElementById('txt1');
+			var oBtn = document.getElementById('btn1');
+
+//多关键词搜索
+/*var str = 'blue leo';
+var arr = str.split(' ');
+var str2 = 'blue is a person';
+
+var bFound = false;
+for(var i=0; i<arr.length; i++){
+	if(str2.search(arr[i]) != -1){
+		bFound = true;
+		break;
+	}
+}
+alert(bFound)*/
+
+			oBtn.onclick = function(){
+				for(var i=0; i<oTab.tBodies[0].rows.length; i++){
+					var sValueInTab = oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+					var sValueInTxt = oTxt.value.toLowerCase();
+					var arr = sValueInTxt.split(' ');
+
+					var bFound = false;
+					for(var j=0; j<arr.length; j++){
+						if(sValueInTab.search(arr[j]) != -1){
+							bFound = true;
+							break;
+						}
+					}
+
+					if( bFound ){
+						oTab.tBodies[0].rows[i].style.background = 'yellow';
+					}else{
+						oTab.tBodies[0].rows[i].style.background = '';
+					}
+				}
+			}
+		}
+	</script>
+
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="button" id="btn1" value="搜索">
+<table id="tab1" border="1" width="400">
+	<thead>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>操作</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>BLUE</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>LEO</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>ZHANG</td>
+			<td></td>
+		</tr>
+	</tbody>
+	<tfoot></tfoot>
+</table>
+	
+</body>
+</html>

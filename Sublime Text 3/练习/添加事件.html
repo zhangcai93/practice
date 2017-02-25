@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	//兼容的事件绑定
+		function myAddEvent(obj, sEvent, fn){
+			if(obj.attachEvent){
+				obj.attachEvent('on'+sEvent, fn)
+			}else{
+				obj.addEventListener(sEvent, fn, false);
+			}
+		}
+
+		//匿名函数
+		obj.attachEvent('onclick', function(){
+			alert('a');
+		})
+		obj.detachEvent('onclick', function(){
+			alert('a');
+		})      //无法解除绑定，两个匿名函数不是一个函数
+
+		//
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

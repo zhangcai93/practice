@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas时钟</title>
+</head>
+<body>
+	<canvas id="clock" width="500" height="500">为了兼容：你的浏览器版本不支持canvas标签
+	</canvas>
+	<script>
+		var oClock = document.getElementById('clock');
+		var cxt = oClock.getContext('2d');
+
+		//1.表盘(蓝色)
+
+		cxt.lineWidth = 10;
+		cxt.strokeStyle = 'blue';
+
+		cxt.beginPath();
+		cxt.arc(250,250, 200, 0,360, false);
+		cxt.stroke();
+		cxt.closePath();
+		//2.刻度
+			//2.1 时刻度
+			//2.2 分刻度
+		//3.时针
+		//4.分针
+		//5.秒针
+	</script>
+</body>
+</html>

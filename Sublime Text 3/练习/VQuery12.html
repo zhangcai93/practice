@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止冒泡和默认事件</title>
+	<style>
+		div{padding: 50px;}
+	</style>
+	<script src='js/VQuery.js'></script>
+	<!-- <script src='js/jquery-3.1.1.js'></script> -->
+	<script>
+		/*
+		JQuery中, 右键菜单事件
+		return false；既能阻止默认事件又能阻止冒泡
+		原生的JS只能阻止默认事件
+		*/
+		/*$(function(){
+			$(document).bind('contextmenu', function(){
+				alert('a');
+				return false; //阻止系统默认的右键菜单出现
+			})
+		})*/
+		/*$(function(){
+			$('div').click(function(){
+				alert(this.style.background);
+				return false;  //阻止冒泡
+			})
+		})*/
+
+
+
+		/*
+			VQuery
+		*/
+		$(function(){
+			$(document).bind('contextmenu', function(){
+				//alert('a');
+				return false;
+			})
+		})
+		$(function(){
+			$('div').click(function(){
+				alert(this.style.background);
+				return false;  //阻止冒泡
+			})
+		})
+	</script>
+</head>
+<body>
+	<div style="background: red;">
+		<div style="background: green;">
+			<div style="background: gray;"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* *{margin:0; padding: 0;} */
+	#div1{width: 100px; height: 100px; background: green;}
+	
+	</style>
+
+<script src='jquery-3.1.1.js'></script>
+	<script>
+		$(function(){
+			//$('#div1').html();
+			$('#div1').get(0).innerHTML;
+
+			for(var i=0; i< $('li').get().length; i++){
+				$('li').get(i).style.background = 'red';
+			}
+		})
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

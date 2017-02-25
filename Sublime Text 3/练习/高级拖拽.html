@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: pink; position: absolute;}
+	</style>
+
+	<script>
+		window.onload =function(){
+			drag('div1')
+		}
+
+		function  drag( id ) {
+
+			var oDiv = document.getElementById(id);
+
+			oDiv.onmousedown = function(ev){
+				var oEvent = ev || event;
+
+				var disX = oEvent.clientX - oDiv.offsetLeft;
+				var disY = oEvent.clientY - oDiv.offsetTop;
+
+				document.onmousemove = function(ev){
+					var oEvent = ev || event;
+
+					var l = oEvent.clientX - disX;
+					var t = oEvent.clientY - disY;
+					
+					//限制范围——不出可视区
+					if( l < 50 ){  //磁性吸附
+						l = 0;
+					}else if( l > document.documentElement.clientWidth - oDiv.offsetWidth - 50){
+						l = document.documentElement.clientWidth - oDiv.offsetWidth;
+					}
+					if( t < 50 ){
+						t = 0;
+					}else if( t > document.documentElement.clientHeight - oDiv.offsetHeight - 50){
+						t = document.documentElement.clientHeight - oDiv.offsetHeight;
+					}
+
+
+
+					oDiv.style.left = l +'px';
+					oDiv.style.top = t + 'px';
+				}
+
+				document.onmouseup = function(){
+					document.onmouseup = null;
+					document.onmousemove = null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

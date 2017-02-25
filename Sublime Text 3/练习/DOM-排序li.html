@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#ul1{background: red;}
+		#ul2{background: #ccc;}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBtn = document.getElementById('btn1');
+			var oUl1 = document.getElementById('ul1');
+			
+
+			oBtn.onclick = function(){
+				var aLi = oUl1.getElementsByTagName('li');
+
+				//aLi.sort();//aLi不是数组不能直接使用sort方法
+
+				var arr= [];
+//转成数组
+				for(var i=0; i<aLi.length; i++){
+					arr[i] = aLi[i];
+				}
+//对数组进行排序
+				arr.sort(function(li1, li2){
+					return parseInt(li1.innerHTML) - parseInt(li2.innerHTML)
+				})
+//将排好序的数组重新插入回去
+				for(var i=0; i<arr.length; i++){
+					oUl1.appendChild(arr[i]);
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="排序li">
+	<ul id="ul1">
+		<li>121</li>
+		<li>27</li>
+		<li>83</li>
+		<li>45</li>
+		<li>15</li>
+	</ul>
+	<ul id="ul2"></ul>
+</body>
+</html>

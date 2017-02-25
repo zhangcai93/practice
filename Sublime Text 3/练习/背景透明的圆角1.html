@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+body{ background:#000;}
+.btn{width:100px;margin:0 auto;background:url(img3/btn.gif) repeat-x;}
+.btnL{background:url(img3/btnL.gif) no-repeat; position:relative;left:-9px;}
+.btnR{ background:url(img3/btnR.gif) no-repeat right 0;height:25px; position:relative; right:-18px;}/*-18是因为前面已经向左偏移过了9px了*/
+/*原来的思路是先中间平铺，再用左右脚的图片覆盖在上面，就能显示出来左右脚了。但是现在左右脚的图片时透明的没有办法盖住下面图片的，因此采取拼接的方式，给一个定位，加偏移量*/
+</style>
+</head>
+<body>
+<div class="btn">
+	<div class="btnL">
+    	<div class="btnR"></div>
+    </div>
+</div>
+</body>
+</html>

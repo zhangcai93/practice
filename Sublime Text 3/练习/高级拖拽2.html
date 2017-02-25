@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{width: 100px; height: 100px; background: pink; position: absolute; z-index: 2;}
+
+		#div2{width: 100px; height: 100px; background: black; position: absolute; top: 500px; left: 500px; z-index: 1;}
+	</style>
+
+	<script>
+		window.onload =function(){
+			drag('div1')
+			drag('div2')
+		}
+
+		function  drag( id ) {
+
+			var oDiv = document.getElementById(id);
+			var oDiv2 = document.getElementById('div2');
+
+			oDiv.onmousedown = function(ev){
+				var oEvent = ev || event;
+
+				var disX = oEvent.clientX - oDiv.offsetLeft;
+				var disY = oEvent.clientY - oDiv.offsetTop;
+
+				if(oDiv.setCapture){  //IE下的
+
+					oDiv.onmousemove = fnMove;
+					oDiv.onmouseup = fnUp;
+
+					oDiv.setCapture();
+				}else{
+					document.onmousemove = fnMove;
+					document.onmouseup = fnUp;
+				}
+
+				function fnMove(ev){
+					var oEvent = ev || event;
+
+					var l = oEvent.clientX - disX;
+					var t = oEvent.clientY - disY;
+					
+					//限制范围——不出可视区
+					if( l < 50 ){  //磁性吸附
+						l = 0;
+					}else if( l > document.documentElement.clientWidth - oDiv.offsetWidth - 50){
+						l = document.documentElement.clientWidth - oDiv.offsetWidth;
+					}
+					if( t < 50 ){
+						t = 0;
+					}else if( t > document.documentElement.clientHeight - oDiv.offsetHeight - 50){
+						t = document.documentElement.clientHeight - oDiv.offsetHeight;
+					}
+
+					oDiv.style.left = l +'px';
+					oDiv.style.top = t + 'px';
+
+					//碰撞检测
+					var l1 = oDiv.offsetLeft;
+					var r1 = oDiv.offsetLeft + oDiv.offsetWidth;
+					var t1 = oDiv.offsetTop;
+					var b1 = oDiv.offsetTop + oDiv.offsetHeight;
+
+					var l2 = oDiv2.offsetLeft;
+					var r2 = oDiv2.offsetLeft + oDiv2.offsetWidth;
+					var t2 = oDiv2.offsetTop;
+					var b2 = oDiv2.offsetTop + oDiv2.offsetHeight;
+
+					if(r1<l2 || l1>r2 || b1<t2 || t1>b2){
+						oDiv2.style.background = 'black';
+					}else{
+						//alert('peng!');
+						oDiv2.style.background = 'green'
+					}
+					
+				}
+				function fnUp(){
+					this.onmouseup = null;
+					this.onmousemove = null;
+					if(this.releaseCapture){
+						this.releaseCapture();
+					}
+					
+				}
+
+				return false;  //解决文字被选中的问题
+			}
+		}
+	</script>
+</head>
+<body>
+	sadgadgas
+	<div id="div1">
+		asdgasgadsg
+	</div>
+	fdhdhdfhdfh
+
+	<div id="div2"></div>
+</body>
+</html>

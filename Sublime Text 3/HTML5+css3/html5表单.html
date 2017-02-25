@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5的表单</title>
+</head>
+<body>
+	<!-- 表单form可以脱离嵌套：form指定ID，所有表单标签都添加form=id属性 -->
+	<form action="form.html" id="register" method="post"></form>
+
+	<input type="text" name="user" form="register">
+	<input type="password" name="psw" form="register">
+	<select name="year" id="" form="register">
+		<option value="1999">1999</option>
+		<option value="2000">2000</option>
+	</select>
+	<textarea name="ext" id="" cols="30" rows="10" form="register"></textarea>
+	<button type="submit" form="register">提交</button>
+	<hr>
+
+	默认值：<input type="text" name="test" form="register"  placeholder="HTML5这里才写默认值" pattern="\d{3}\"><br>
+	<!-- 不提倡，value="这里是默认值"在value中写默认值，placeholder属性写默认值，用户能看见，不会向后台传送 ;-->
+	<!-- pattern=属性可以在html中自定义正则验证 -->
+
+	邮箱：<input type="email" name="youxiang" form="register" required="required"><br>
+	<!-- required="required"设置表单某个为必填选项 -->
+	<!-- type=email提供了邮箱的正则验证 -->
+	URL：<input type="url" name="url" form="register" autofocus="autofocus"><br>
+	<!-- autofocus="autofocus"属性-自动聚焦 -->
+	<!-- url必须是带协议的url -->
+	DATE：<input type="date" name="riqi" form="register"><br>
+	<!-- html5的date类型自带日期的插件 -->
+	TIME:<input type="time" name="shijian" form="register"></input><br>
+	<!-- html5的date类型自带时间选择器24小时的插件，只有opera支持 -->
+	Month: <input type="month" form="register"><br>
+	<!-- html5的month/week类型自带月份/星期选择器的插件 -->
+	数字： <input type="number" form="register"><br>
+	滑动条： <input type="range" form="register" max="8" step="2"><br>
+	搜索框：<input type="search" form="register" results='n'><br>
+	颜色： <input type="color" form="register">
+	<hr>
+
+
+	自动填充表单<br>
+	<input type="text" name="auto" list="movie">
+	<datalist id="movie">
+		<option value="">追逐繁星的孩子</option>
+		<option value="">秒速五厘米</option>
+		<option value="">夏日大作战</option>
+	</datalist>
+	<hr>
+
+	输出表单output <br>
+	<form action="" method="post" oninput="result.value = no1.value*no2.value">
+		<input type="number" name="no1">
+		<input type="number" name="no2">
+		<output name="result"></output>
+	</form>
+
+</body>
+</html>

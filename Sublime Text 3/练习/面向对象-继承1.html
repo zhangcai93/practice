@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+	function Person(name, sex){
+		this.name = name;
+		this.sex = sex;
+	}
+
+	Person.prototype.showName = function() {
+		alert(this.name);
+	};
+	Person.prototype.showSex = function() {
+		alert(this.sex);
+	};
+
+	var p1 = new Person('blue', 'male');
+	p1.showName();
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

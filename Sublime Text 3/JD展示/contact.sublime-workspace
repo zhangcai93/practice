@@ -1,0 +1,500 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getByClass"
+			],
+			[
+				"s",
+				"showName"
+			],
+			[
+				"c",
+				"createPerson"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"sh",
+				"showSex"
+			],
+			[
+				"show",
+				"showName"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"i",
+				"iSpeedY"
+			],
+			[
+				"iS",
+				"iSpeedY"
+			],
+			[
+				"la",
+				"lastY"
+			],
+			[
+				"on",
+				"onmouseup"
+			],
+			[
+				"onmo",
+				"onmousemove"
+			],
+			[
+				"dis",
+				"disY"
+			],
+			[
+				"off",
+				"offsetTop"
+			],
+			[
+				"iSp",
+				"iSpeedX"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"o",
+				"offsetLeft"
+			],
+			[
+				"onc",
+				"onclick\tAttr"
+			],
+			[
+				"a",
+				"aA"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"div",
+				"div1"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"ul",
+				"ul1"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"tx",
+				"text-align"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"arr",
+				"arrTxt"
+			],
+			[
+				"fil",
+				"filter"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"sear",
+				"searPic"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"padding",
+				"padding"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"bor",
+				"border-collapse"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"loa",
+				"float"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"fi",
+				"filter"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"bore",
+				"border"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"hea",
+				"head"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"fla",
+				"float"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"t",
+				"td"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "pcip",
+		"selected_items":
+		[
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/Sublime Text 3/练习/面向对象-选项卡实例.html",
+		"/F/Sublime Text 3/练习/面向对象 -混合法.html",
+		"/F/Sublime Text 3/练习/面向对象.html",
+		"/F/Sublime Text 3/练习/面向对象-工厂模式.html",
+		"/F/Sublime Text 3/练习/滑动门.html",
+		"/F/Sublime Text 3/练习/滑动门导航.html",
+		"/F/Sublime Text 3/练习/碰撞和重力和拖拽.html",
+		"/F/Sublime Text 3/练习/eg2.html",
+		"/F/Sublime Text 3/练习/js/move.js",
+		"/F/Sublime Text 3/练习/js/impactmove.js",
+		"/F/Sublime Text 3/练习/无缝滚动.html",
+		"/F/Sublime Text 3/练习/新浪微博效果.html",
+		"/F/Sublime Text 3/练习/图片放大_布局转换.html",
+		"/F/Sublime Text 3/练习/模拟短信发送.html",
+		"/F/Sublime Text 3/练习/图片.html",
+		"/F/Sublime Text 3/练习/图片切换.html",
+		"/F/Sublime Text 3/练习/css/index.css",
+		"/F/Sublime Text 3/练习/eg.html",
+		"/F/Sublime Text 3/练习/js/elasticmove.js",
+		"/F/Sublime Text 3/练习/弹性—模拟菜单展开.html",
+		"/F/Sublime Text 3/练习/弹性运动和摩擦2.html",
+		"/F/Sublime Text 3/练习/弹性运动.html",
+		"/F/Sublime Text 3/练习/弹性运动 - 副本.html",
+		"/F/Sublime Text 3/练习/弹性运动和摩擦.html",
+		"/F/Sublime Text 3/练习/碰撞运动和重力.html",
+		"/F/Sublime Text 3/练习/碰撞运动2.html",
+		"/F/Sublime Text 3/练习/碰撞运动.html",
+		"/F/Sublime Text 3/练习/碰撞拖拽—按点计算速度.html",
+		"/F/迅雷下载/Js/lesson5/2.html",
+		"/F/迅雷下载/Js/lesson5/1.html",
+		"/F/Sublime Text 3/练习/header.html",
+		"/F/Sublime Text 3/练习/opentaobao/淘宝开放平台.html",
+		"/F/Sublime Text 3/练习/opentaobao/css/index.css",
+		"/F/Sublime Text 3/练习/淘宝开放平台.html",
+		"/F/Sublime Text 3/练习/等高布局.html",
+		"/F/Sublime Text 3/练习/table实例.html",
+		"/F/Sublime Text 3/练习/圣杯布局.html",
+		"/E/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/9_css精灵.html",
+		"/F/Sublime Text 3/练习/背景透明的圆角2.html",
+		"/F/Sublime Text 3/练习/背景透明的圆角1.html",
+		"/E/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/6_背景透明的圆角.html",
+		"/E/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/5_宽高可扩展的圆角背景.html",
+		"/F/Sublime Text 3/练习/滤镜和遮罩.html",
+		"/F/Sublime Text 3/练习/导航.html",
+		"/F/Sublime Text 3/练习/布局练习.html",
+		"/F/Sublime Text 3/练习/img2/ico.gif",
+		"/E/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/8_css精灵.html",
+		"/E/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/7_背景透明的圆角.html",
+		"/E/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/3_滑动门导航.html",
+		"/F/Sublime Text 3/练习/两层嵌套做一个带图div.html",
+		"/F/Sublime Text 3/练习/三层嵌套做一个带图div.html",
+		"/F/Sublime Text 3/练习/position.html",
+		"/F/迅雷下载/HTML、css/第09课：滑动门css精灵、圆角及其扩展/lesson09/1_三层嵌套.html",
+		"/F/Sublime Text 3/练习/sublime-布局.html",
+		"/F/presentationpage/about.html",
+		"/F/迅雷下载/HTML、css/第06课：浮动实例、网站结构制作实例/lesson06/3_练习3.html",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/F/Sublime Text 3/练习/1.我的网页.html",
+		"/F/testjs.html",
+		"/C/Users/New/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/C/Users/New/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/C/Users/New/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/E/sublime-布局",
+		"/F/myjs.js",
+		"/F/xampp/htdocs/zcbootstrap/index.html",
+		"/C/Users/New/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			">"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "contact.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 172.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

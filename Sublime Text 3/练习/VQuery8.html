@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>find()</title>
+	<script src='js/VQuery.js'></script>
+	<script>
+		$(function(){
+			/*find()方法是用来找子元素的方法*/
+			$('ul').find('.box').css('background', 'red');
+		})
+
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li class="box"></li>
+		<li class="box"></li>
+		<li></li>
+	</ul>
+	<ol>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+</body>
+</html>

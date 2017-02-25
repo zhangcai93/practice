@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#ul1{background: red;}
+		#ul2{background: #ccc;}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBtn = document.getElementById('btn1');
+			var oUl1 = document.getElementById('ul1');
+			//var oUl2 = document.getElementById('ul2');
+
+			oBtn.onclick = function(){
+				var aLi = oUl1.getElementsByTagName('li');
+
+				//oUl2.appendChild(aLi[0]);
+				oUl1.appendChild(aLi[0]);
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="移动li">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<ul id="ul2"></ul>
+</body>
+</html>

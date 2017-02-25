@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>苹果导航菜单</title>
+	<style>
+		body{margin: 0; padding: 0;}
+		#div1{width: 100%; position: absolute; bottom: 0; text-align: center;}
+	</style>
+
+	<script>
+		window.onload = function(){
+
+		}
+
+		document.onmousemove = function(ev){
+			var oEvent = ev || event;
+			var aImg = document.getElementsByTagName('img');
+			var aTxt = document.getElementsByTagName('input');
+			var oDiv = document.getElementById('div1');
+
+			for(var i=0; i<aImg.length; i++){
+				//1.确定下来每个图标的位置x，y
+				var x = aImg[i].offsetLeft + aImg[i].offsetWidth/2 ;
+				var y = aImg[i].offsetTop + oDiv.offsetTop + aImg[i].offsetHeight/2 ;
+				//aTxt[i].value = 'x: '+ x +', y: '+ y;
+				
+				//2.鼠标和图标之间的距离
+				var a = x - oEvent.clientX;
+				var b = y - oEvent.clientY;
+
+				var dis = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+				//aTxt[i].value = parseInt(dis);
+
+				//3.距离变换成比例，按比例缩放图标，距离越近，比例越大
+				var scale = 1- dis/300;
+
+				if(scale<0.5){
+					scale = 0.5;
+				}
+
+				aImg[i].width = scale*128;
+
+				aTxt[i].value = scale.toFixed(2); //保留两位小数
+			}
+
+		}
+	</script>
+</head>
+<body>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<div id="div1">
+	<img src="appleimg/1.png" width="64" alt="">
+	<img src="appleimg/2.png" width="64" alt="">
+	<img src="appleimg/3.png" width="64" alt="">
+	<img src="appleimg/4.png" width="64" alt="">
+	<img src="appleimg/5.png" width="64" alt="">
+</div>
+	
+</body>
+</html>

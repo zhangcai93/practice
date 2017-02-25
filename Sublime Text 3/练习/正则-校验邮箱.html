@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			var oTxt = document.getElementById('txt1');
+			var oBtn = document.getElementById('btn1');
+
+			oBtn.onclick= function(){
+				var re = /^\w+@[a-z0-9]+\.[a-z]{2,4}$/g;
+
+				if(re.test(oTxt.value)){
+					alert('right');
+				}else{
+					alert('wrong');
+				}
+			}
+		}
+		
+
+		
+
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="button" id="btn1" value="校验">
+</body>
+</html>

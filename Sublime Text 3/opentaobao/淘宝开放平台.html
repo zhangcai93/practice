@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝开放平台</title>
+	<link rel="stylesheet" href="css/index.css">
+<script>
+		window.onload = function(){
+			var oSePic = document.getElementById('searPic');
+			var oSeInp = document.getElementById('searInp');
+			var oCloPic = document.getElementById('closePic');
+			//console.log(oSePic);
+			//console.log(oSeInp);
+
+			oSePic.onclick = function(){
+				//alert('a');
+				oSeInp.style.zIndex = 1;
+				oCloPic.style.zIndex = 1;
+			}
+			oCloPic.onclick = function(){
+				//alert('b');
+				oSeInp.style.zIndex = -1;
+				oCloPic.style.zIndex = -1;
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="nav">
+		<div class="container">
+			<div class="logo_container">
+				<h1>
+					<a href="">
+						<img src="img/logo.jpg"/>
+						<span>淘宝开放平台</span>
+					</a>
+				</h1>
+			</div>
+
+			<div class="nav_container">
+				<ul>
+					<li>
+						<a href="">解决方案</a>
+					</li>
+					<li>
+						<a href="">开放版图
+						<img src="img/pullicon.jpg"/>
+						</a>
+						
+					</li>
+					<li>
+						<a href="">文档中心
+						<img src="img/pullicon.jpg"/>
+						</a>
+					</li>
+					<li>
+						<a href="">开发者服务
+						<img src="img/pullicon.jpg"/>
+						</a>
+					</li>
+					<li>
+						<a href="">开发者学院</a>
+					</li>
+					<li>
+						<a href="">控制台</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="pull_right">
+				<div class="login_container">
+					<a href="#">登录</a>
+				</div>
+				<div class="notify_container">
+					<a href="#">
+						<img src="img/bell.jpg" alt="">
+						<span></span>
+					</a>
+				</div>
+				<div class="search_container">
+					<div class="inner">
+							<input id='searInp'  type="text"/>
+							<a  href="#" class="search">	
+								<img  id="closePic" src="img/close.jpg" alt="">
+							</a>
+						<a  href="#" class="search">	
+							<img  id="searPic" src="img/look.jpg" alt="">
+						</a>
+						
+							
+					</div>
+							
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+
+function CreatePerson(name , sex){ //构造函数
+
+//假想的系统内部工作流程
+// var this = new Object();
+
+// 属性：每个对象都各不相同
+	this.name = name;
+	this.sex = sex;
+
+//假想的系统内部工作流程
+// return this;s	
+
+}
+
+//方法：所有对象都一样
+CreatePerson.prototype.showName = function(){
+		alert('my name:' + this.name);
+}
+CreatePerson.prototype.showSex = function(){
+		alert('I am:' + this.sex);
+}
+
+	var p1 = new CreatePerson('zhang' , 'male');
+	var p2 = new CreatePerson('leo' , 'female')
+
+	p1.showName();
+	p1.showSex();
+
+	p2.showName();
+	p2.showSex();
+
+	alert(p1.showName == p2.showName);
+</script>
+<body>
+	
+</body>
+</html> 

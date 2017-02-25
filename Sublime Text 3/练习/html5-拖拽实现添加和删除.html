@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽实现添加和删除</title>
+	<style>
+		.ele{
+			display: inline-block;padding: 10px;background: pink;margin: 3px;
+		}
+		#dest{width: 50px;height: 50px; background: yellow; padding: 10px; margin: 10px;}
+		#gb{width: 50px;height: 50px; background: gray; padding: 10px; margin: 10px;}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="ele" darggable='true'>aaaaaa</div>
+		<div class="ele" darggable='true'>bbbbbb</div>
+		<div class="ele" darggable='true'>cccccc</div>
+		<div class="ele" darggable='true'>dddddd</div>
+	</div>
+	<div id="dest">收藏夹</div>
+	<div id="gb">垃圾桶</div>
+</body>
+</html>

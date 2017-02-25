@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	
+	</style>
+
+<script src='jquery-3.1.1.js'></script>
+	<script>
+		$(function(){
+			/*$('li').on('click', function(){
+				this.style.background = 'red';
+			})*/
+
+
+			//事件委托
+			$('ul').delegate('li', 'click', function(){
+				this.style.background = 'red';
+
+				//取消事件委托
+				$('ul').undelegate();
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>11111</li>
+		<li>2222</li>
+		<li>333</li>
+	</ul>
+</body>
+</html>

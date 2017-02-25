@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+	function Person(name, sex){
+		this.name = name;
+		this.sex = sex;
+	}
+
+	Person.prototype.showName = function() {
+		alert(this.name);
+	};
+	Person.prototype.showSex = function() {
+		alert(this.sex);
+	};
+
+	/*var p1 = new Person('blue', 'male');
+	p1.showName();*/
+
+	//_________________________________________________________
+
+	function Worker(name, sex, job){
+		//构造函数伪装： 这里this应该是new出来worker对象，将worker对象传给Person的构造函数，Person构造函数以为他是new出来的Person对象，给Worker对象赋值了。继承父级的属性。
+		Person.call(this, name, sex);
+
+		this.job = job;
+	}
+
+//原型链：通过原型继承父级的的方法
+	//Worker.prototype = Person.prototype;//让Worker的原型指向Person的原型（在内存中指向同一块地址）。若是最子类的原型进行修改父类的原型也会发生改变（这是我们不想要的）,修改为：
+	for (var i in Person.prototype) {
+		Worker.prototype[i] = Person.prototype[i];
+	}
+
+	Worker.prototype.showJob = function(){
+		alert(this.job);
+	}
+
+	var oW1 = new Worker('blue', 'male', 'AA');
+	oW1.showName();
+	oW1.showJob();
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

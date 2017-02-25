@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery-3.1.1.js'></script>
+</head>
+<body>
+	<div id="div1" class="box">div</div>
+	<div>div</div>
+	<div>div</div>
+	<div>div</div>
+	<span class="box">span</span>
+</body>
+
+<script>
+	/*document.getElementById('div1');
+	document.getElementsByTagName('div');
+	getByClass(document,'box');
+
+
+	function getByClass(parent, classname){
+		var aEls = parent.getElementsByTagName('*');
+		var arr = [];
+		for(var i=0; i<aEls.length; i++){
+			if(aEls[i].className == classname){
+				arr.push(aEls[i]);
+			}
+		}
+		return arr;
+	}*/
+
+	//$('#div1').css('background', 'red');
+	//$('div').css('background', 'red');
+	//$('.box').css('background', 'red');
+
+
+	$('div:first').css('background', 'red');
+</script>
+</html>
