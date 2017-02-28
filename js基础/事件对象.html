@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<p>兼容处理,封装一个EventUtil对象,有多个方法供调用</p>
+	<script>
+		var EventUtil = {
+			addHandler: function(ele, type, fn) {
+				if(ele.addEventListener){
+					ele.addEventListener( type, fn, false);
+				}else if(ele.attachEvnet){
+					ele.attachEvnet( 'on'+type, fn);
+				}else{
+					ele['on'+type] = fn;
+				}	
+			},
+			getEvent: function(event){
+				return event?event:window.event;
+			},
+			getTarget:function(event){
+				return event.target || event.srcElement;
+			},
+			preventDefault: function(event){
+				if(event.preventDefault){
+					event.preventDefault();
+				}else{
+					event.returnValue = false;
+				}
+			},
+			removeHandler: function(ele, type, fn) {
+				if(ele.removeEventListener){
+					ele.removeEventListener( type, fn, false);
+				}else if(ele.detachEvnet){
+					ele.detachEvnet( 'on'+type, fn);
+				}else{
+					ele['on'+type] = null;
+				}	
+			},
+			stopPropagation: function(event){
+				if(event.stopPropagation){
+					event.stopPropagation();
+				}else{
+					event.cancelBubble = true;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<script type="text/javascript">
+
+  var num=0;
+
+  function startCount() {
+
+    document.getElementById('count').value=num;
+
+    num=num+1; 
+
+     setTimeout("startCount()",1000); //在函数内设置定时 
+
+  }
+
+    setTimeout("startCount()",1000); //在函数外调用，函数必须调用才运行 
+
+</script>
+</head>
+<body>
+	<form>
+<input type="text" id="count" />
+</form>
+</body>
+</html>
